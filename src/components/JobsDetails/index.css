@@ -15,6 +15,10 @@
   align-items: flex-start;
 }
 
+.nav-list-items {
+  text-decoration: none;
+}
+
 .company-logo {
   height: 80px;
   width: 80px;

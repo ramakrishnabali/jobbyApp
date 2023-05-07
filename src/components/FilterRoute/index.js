@@ -38,29 +38,53 @@ const salaryRangesList = [
   },
 ]
 
-const FilterRoute = () => (
-  <>
-    <h1 className="filter-heading">Type of Employment</h1>
-    <ul className="employment-container">
-      {employmentTypesList.map(eachList => (
-        <li className="filter-container" key={eachList.salaryRangeId}>
-          <input className="employment-input" type="checkbox" />
-          <p className="employment-type">{eachList.label}</p>
-        </li>
-      ))}
-    </ul>
-    <hr className="hr-line" />
-    <h1 className="filter-heading">Salary Range</h1>
+const FilterRoute = props => {
+  const {employmentType, salaryRange} = props
+  return (
+    <>
+      <h1 className="filter-heading">Type of Employment</h1>
+      <ul className="employment-container">
+        {employmentTypesList.map(eachList => {
+          const getEmployment = event => {
+            employmentType(event)
+          }
 
-    <ul className="employment-container">
-      {salaryRangesList.map(eachList => (
-        <li className="filter-container" key={eachList.employmentTypeId}>
-          <input className="employment-input" type="radio" name="range" />
-          <p className="employment-type">{eachList.label}</p>
-        </li>
-      ))}
-    </ul>
-  </>
-)
+          return (
+            <li className="filter-container" key={eachList.employmentTypeId}>
+              <input
+                value={eachList.employmentTypeId}
+                onChange={getEmployment}
+                className="employment-input"
+                type="checkbox"
+              />
+              <p className="employment-type">{eachList.label}</p>
+            </li>
+          )
+        })}
+      </ul>
+      <hr className="hr-line" />
+      <h1 className="filter-heading">Salary Range</h1>
 
+      <ul className="employment-container">
+        {salaryRangesList.map(eachList => {
+          const getSalaryRange = () => {
+            salaryRange(eachList.salaryRangeId)
+          }
+
+          return (
+            <li className="filter-container" key={eachList.salaryRangeId}>
+              <input
+                onChange={getSalaryRange}
+                className="employment-input"
+                type="radio"
+                name="range"
+              />
+              <p className="employment-type">{eachList.label}</p>
+            </li>
+          )
+        })}
+      </ul>
+    </>
+  )
+}
 export default FilterRoute
