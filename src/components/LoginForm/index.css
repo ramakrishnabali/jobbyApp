@@ -3,7 +3,7 @@
   justify-content: center;
   align-items: center;
   background-color: #000000;
-  min-height: 100vh;
+  height: 100vh;
 }
 
 .login-form {
@@ -108,4 +108,18 @@
     font-size: 15px;
     font-weight: 500;
   }
+}
+
+span {
+  color: #fbbf24;
+}
+
+.default-login-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #000000;
+  align-self: center;
+  margin-top: 0px;
 }

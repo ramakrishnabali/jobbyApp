@@ -59,41 +59,52 @@ class LoginForm extends Component {
     }
 
     return (
-      <div className="login-container">
-        <form onSubmit={this.verifyUser} className="login-form">
-          <img
-            src="https://assets.ccbp.in/frontend/react-js/logo-img.png"
-            alt="website logo"
-            className="website-logo"
-          />
-          <label className="label" htmlFor="username">
-            USERNAME
-          </label>
-          <input
-            value={username}
-            onChange={this.getUsername}
-            placeholder="Username"
-            className="input"
-            id="username"
-            type="text"
-          />
-          <label className="label" htmlFor="password">
-            PASSWORD
-          </label>
-          <input
-            value={password}
-            onChange={this.getPassword}
-            className="input"
-            placeholder="Password"
-            id="password"
-            type="password"
-          />
-          <button className="login-button" type="submit">
-            Login
-          </button>
-          {submissionStatus && <p className="error">{errorMsg}</p>}
-        </form>
-      </div>
+      <>
+        <div className="default-login-container">
+          <p className="label">
+            Default Username:<span>rahul</span>
+          </p>
+
+          <p className="label">
+            Default Password:<span>rahul@2021</span>
+          </p>
+        </div>
+        <div className="login-container">
+          <form onSubmit={this.verifyUser} className="login-form">
+            <img
+              src="https://assets.ccbp.in/frontend/react-js/logo-img.png"
+              alt="website logo"
+              className="website-logo"
+            />
+            <label className="label" htmlFor="username">
+              USERNAME
+            </label>
+            <input
+              value={username}
+              onChange={this.getUsername}
+              placeholder="Username"
+              className="input"
+              id="username"
+              type="text"
+            />
+            <label className="label" htmlFor="password">
+              PASSWORD
+            </label>
+            <input
+              value={password}
+              onChange={this.getPassword}
+              className="input"
+              placeholder="Password"
+              id="password"
+              type="password"
+            />
+            <button className="login-button" type="submit">
+              Login
+            </button>
+            {submissionStatus && <p className="error">{errorMsg}</p>}
+          </form>
+        </div>
+      </>
     )
   }
 }

@@ -7,6 +7,13 @@
   justify-content: center;
   align-items: center;
   margin-top: 13px;
+  height: 250px;
+}
+@media (max-width: 577px) {
+  .profile-container {
+    height: 180px;
+    border-radius: 20px;
+  }
 }
 
 .loader-container {
@@ -26,12 +33,23 @@
   height: 100px;
   width: 100px;
 }
+@media (max-width: 577px) {
+  .profile-image {
+    height: 60px;
+    width: 60px;
+  }
+}
 
 .profile-name {
   color: #6366f1;
   font-size: 23px;
   font-weight: 700;
   font-family: 'Roboto';
+}
+@media (max-width: 577px) {
+  .profile-name {
+    font-size: 18px;
+  }
 }
 
 .profile-short {
